@@ -210,7 +210,13 @@ const Home = () => {
       <ShowcaseSection />
       <StatsSection />
       {/* <TestimonialsSection /> */}
-      <CTASection />
+      <CTASection
+        email={email}
+        setEmail={setEmail}
+        phone={phone}
+        setPhone={setPhone}
+        handleRegister={handleRegister}
+      />
       <Footer />
     </div>
   );
