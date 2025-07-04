@@ -697,7 +697,7 @@ const HeroSection = ({
               transition={{ delay: 0.6 }}
             >
               {[
-                { value: "500+", label: "Happy Shopkeepers", icon: "🏪" },
+                { value: "500+", label: "Early users", icon: "🏪" },
                 { value: "24/7", label: "Online Sales", icon: "💰" },
                 { value: "FREE", label: "Setup Cost", icon: "🎉" },
               ].map((stat, index) => (
@@ -965,9 +965,9 @@ const FeaturesSection = () => {
               Going Online 🚀
             </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
+          {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto font-mono">
             Join 500+ happy shopkeepers who increased their sales by 40-60% 📈
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1308,7 +1308,7 @@ const ShowcaseSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main showcase */}
+          {/* Main showcase with admin.png background */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -1316,17 +1316,25 @@ const ShowcaseSection = () => {
             className="lg:col-span-2 relative group"
           >
             <div className="bg-gradient-to-br from-[#03A6A1]/10 to-[#FFA673]/10 rounded-3xl p-1 h-96">
-              <div className="bg-white rounded-3xl h-full p-8 relative overflow-hidden">
+              <div
+                className="bg-white rounded-3xl h-full p-8 relative overflow-hidden"
+                style={{
+                  backgroundImage: `url(/admin.png)`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
                 {/* Success sticker */}
                 <motion.div
-                  className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12"
+                  className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12 z-10"
                   animate={{ rotate: [12, 15, 12] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   +60% Sales! 🔥
                 </motion.div>
 
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <div className="flex space-x-2">
                     <motion.div
                       className="w-3 h-3 bg-red-400 rounded-full"
@@ -1343,7 +1351,7 @@ const ShowcaseSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center h-full">
+                <div className="flex items-center justify-center h-full relative z-10">
                   <div className="text-center">
                     <motion.div
                       className="text-6xl mb-4"
@@ -1375,13 +1383,14 @@ const ShowcaseSection = () => {
                 </div>
 
                 {/* Hover effect */}
-                <motion.div className="absolute inset-0 bg-gradient-to-br from-[#03A6A1]/0 to-[#FFA673]/0 group-hover:from-[#03A6A1]/10 group-hover:to-[#FFA673]/10 transition-all duration-300" />
+                <motion.div className="absolute inset-0 bg-gradient-to-br from-[#03A6A1]/0 to-[#FFA673]/0 group-hover:from-[#03A6A1]/10 group-hover:to-[#FFA673]/10 transition-all duration-300 z-20" />
               </div>
             </div>
           </motion.div>
 
           {/* Side showcases */}
           <div className="space-y-8">
+            {/* First showcase with herop.png background */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -1389,17 +1398,25 @@ const ShowcaseSection = () => {
               className="relative group"
             >
               <div className="bg-gradient-to-br from-[#FFA673]/10 to-[#FF4F0F]/10 rounded-2xl p-1 h-44">
-                <div className="bg-white rounded-2xl h-full p-6 relative overflow-hidden">
+                <div
+                  className="bg-white rounded-2xl h-full p-6 relative overflow-hidden"
+                  style={{
+                    backgroundImage: `url(/herop.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   {/* WhatsApp badge */}
                   <motion.div
-                    className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center"
+                    className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center z-10"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     📱 WhatsApp
                   </motion.div>
 
-                  <div className="flex items-center justify-center h-full">
+                  <div className="flex items-center justify-center h-full relative z-10">
                     <div className="text-center">
                       <motion.div
                         className="text-4xl mb-2"
@@ -1420,6 +1437,7 @@ const ShowcaseSection = () => {
               </div>
             </motion.div>
 
+            {/* Second showcase with pavement.png background */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -1427,8 +1445,16 @@ const ShowcaseSection = () => {
               className="relative group"
             >
               <div className="bg-gradient-to-br from-[#03A6A1]/10 to-[#03A6A1]/20 rounded-2xl p-1 h-44">
-                <div className="bg-white rounded-2xl h-full p-6 relative overflow-hidden">
-                  <div className="flex items-center justify-center h-full">
+                <div
+                  className="bg-white rounded-2xl h-full p-6 relative overflow-hidden"
+                  style={{
+                    backgroundImage: `url(/pavement.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  <div className="flex items-center justify-center h-full relative z-10">
                     <div className="text-center">
                       <motion.div
                         className="text-4xl mb-2"
@@ -1462,10 +1488,10 @@ const StatsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { value: "500+", label: "Happy Shopkeepers", suffix: "", icon: "🏪" },
-    { value: "50", label: "Avg Sales Increase", suffix: "%", icon: "📈" },
-    { value: "24/7", label: "Online Sales", suffix: "", icon: "⏰" },
-    { value: "FREE", label: "Setup Cost", suffix: "", icon: "🎉" },
+    { value: "500+", label: "Early users", suffix: "", icon: "🏪" },
+    ,
+    { value: "15Mmin", label: "Setup Time", suffix: "", icon: "⏰" },
+    { value: "100%", label: "Modern design", suffix: "", icon: "😎" },
   ];
 
   return (
@@ -1506,9 +1532,9 @@ const StatsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="font-mono text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Real Results from
+            Early results from
             <span className="block bg-gradient-to-r from-[#03A6A1] to-[#FF4F0F] bg-clip-text text-transparent">
-              Real Shopkeepers 📊
+              beta users 📊
             </span>
           </h2>
         </motion.div>
@@ -1989,14 +2015,14 @@ const CTASection = ({
           </motion.div> */}
         </motion.div>
 
-        <motion.p
+        {/* <motion.p
           className="font-mono text-sm text-white/70 mt-6"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
         >
           No setup cost • 1 month free trial • Cancel anytime • 24/7 support 🎈
-        </motion.p>
+        </motion.p> */}
 
         {/* Fun celebration emojis */}
         <motion.div
@@ -2096,10 +2122,10 @@ const Footer = () => {
               Support
             </h4>
             <ul className="space-y-2">
-              <li className="flex items-center text-sm text-gray-400">
+              {/* <li className="flex items-center text-sm text-gray-400">
                 <Phone className="w-4 h-4 mr-2" />
                 +1 (555) 123-4567
-              </li>
+              </li> */}
               <li className="flex items-center text-sm text-gray-400">
                 <span className="w-4 h-4 mr-2">📧</span>
                 help@codepup.com
