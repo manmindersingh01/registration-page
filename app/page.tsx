@@ -587,7 +587,7 @@ const HeroSection = ({
             >
               <strong>No technical knowledge needed!</strong> AI-powered
               platform that creates complete online stores with payment
-              processing, inventory management, and customer support. Just like
+              processing, inventory management, and customer support.
             </motion.p>
 
             {/* Add logo in hero section */}
