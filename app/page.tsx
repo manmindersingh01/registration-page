@@ -1980,13 +1980,13 @@ const CTASection = ({
             />
           </motion.button>
 
-          <motion.div
+          {/* <motion.div
             className="flex items-center text-white/90"
             whileHover={{ scale: 1.02 }}
           >
             <Phone className="w-5 h-5 mr-2" />
             <span className="font-mono">or call us: +1 (555) 123-4567</span>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         <motion.p
