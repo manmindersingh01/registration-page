@@ -588,8 +588,6 @@ const HeroSection = ({
               <strong>No technical knowledge needed!</strong> AI-powered
               platform that creates complete online stores with payment
               processing, inventory management, and customer support. Just like
-              Marcus from Chicago - his electronics store sales increased by
-              60%! 📈
             </motion.p>
 
             {/* Add logo in hero section */}
