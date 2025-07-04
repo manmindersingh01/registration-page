@@ -714,13 +714,14 @@ const HeroSection = ({
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ type: "spring", stiffness: 260, damping: 20 }}
                   >
-                    {stat.icon}
+                    
+                    {stat?.icon}
                   </motion.div>
                   <div className="font-mono text-xl font-bold text-gray-900">
-                    {stat.value}
+                    {stat?.value}
                   </div>
                   <div className="text-xs font-mono text-gray-500 uppercase tracking-wider">
-                    {stat.label}
+                    {stat?.label}
                   </div>
                   {/* Fun popup on hover */}
                   <motion.div
@@ -1577,7 +1578,7 @@ const StatsSection = () => {
                   transition: { duration: 0.3 },
                 }}
               >
-                {stat.icon}
+                {stat?.icon}
               </motion.div>
 
               <div className="font-mono relative z-10">
@@ -1587,13 +1588,13 @@ const StatsSection = () => {
                   animate={isInView ? { opacity: 1 } : {}}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  {stat.value}
+                  {stat?.value}
                 </motion.span>
-                <span className="text-2xl text-gray-600">{stat.suffix}</span>
+                <span className="text-2xl text-gray-600">{stat?.suffix}</span>
               </div>
 
               <div className="font-mono text-sm text-gray-600 uppercase tracking-wider mt-2 relative z-10">
-                {stat.label}
+                {stat?.label}
               </div>
 
               {/* Fun tooltip on hover */}
